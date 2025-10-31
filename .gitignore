@@ -57,7 +57,7 @@ output/*
 data/uploads/*
 !data/uploads/.gitkeep
 
-# Kamel specific (remove if you want to deploy all)
+# Kamel specific (sensitive data)
 kamel/
 *.db
 *.db-*
