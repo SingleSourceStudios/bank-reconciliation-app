@@ -77,8 +77,21 @@ class BankStatementProcessor:
             # Convert amount to numeric
             df['Amount'] = pd.to_numeric(df['Amount'], errors='coerce')
             
+            # Show info about data processing
+            initial_count = len(df)
+            
             # Drop rows with invalid dates
             df = df.dropna(subset=['Date'])
+            
+            # Show info about dropped rows
+            if initial_count > len(df):
+                print(f"Dropped {initial_count - len(df)} rows due to invalid dates")
+            
+            # Convert invalid amounts to 0 instead of dropping them
+            invalid_amounts = df['Amount'].isna().sum()
+            if invalid_amounts > 0:
+                print(f"Found {invalid_amounts} rows with invalid amounts, setting to 0")
+            df['Amount'] = df['Amount'].fillna(0)
             
             # Sort by date
             df = df.sort_values('Date').reset_index(drop=True)
@@ -229,8 +242,21 @@ class XeroDataProcessor:
                 # Convert amount to numeric
                 df['Amount'] = pd.to_numeric(df['Amount'], errors='coerce')
             
+            # Show info about data processing
+            initial_count = len(df)
+            
             # Drop rows with invalid dates
             df = df.dropna(subset=['Date'])
+            
+            # Show info about dropped rows
+            if initial_count > len(df):
+                print(f"Dropped {initial_count - len(df)} rows due to invalid dates")
+            
+            # Convert invalid amounts to 0 instead of dropping them
+            invalid_amounts = df['Amount'].isna().sum()
+            if invalid_amounts > 0:
+                print(f"Found {invalid_amounts} rows with invalid amounts, setting to 0")
+            df['Amount'] = df['Amount'].fillna(0)
             
             # Sort by date
             df = df.sort_values('Date').reset_index(drop=True)

@@ -178,13 +178,24 @@ def show_reconciliation_results():
     if 'discrepancies' in st.session_state:
         discrepancies = st.session_state.discrepancies
         
-        st.subheader(f"Found {len(discrepancies)} Discrepancies")
+        # Calculate counts
+        unmatched_bank_count = len([d for d in discrepancies if d['type'] == 'unmatched_bank'])
+        unmatched_xero_count = len([d for d in discrepancies if d['type'] == 'unmatched_xero'])
+        total_discrepancies = unmatched_bank_count + unmatched_xero_count
+        
+        st.subheader(f"Found {total_discrepancies} Total Discrepancies")
         
         # Summary metrics
         col1, col2, col3 = st.columns(3)
-        col1.metric("Total Discrepancies", len(discrepancies))
-        col2.metric("Unmatched Bank Entries", len([d for d in discrepancies if d['type'] == 'unmatched_bank']))
-        col3.metric("Unmatched Xero Entries", len([d for d in discrepancies if d['type'] == 'unmatched_xero']))
+        col1.metric("Total Discrepancies", total_discrepancies)
+        col2.metric("Unmatched Bank Entries", unmatched_bank_count)
+        col3.metric("Unmatched Xero Entries", unmatched_xero_count)
+        
+        # Show additional info about duplicates
+        duplicate_bank_count = len([d for d in discrepancies if d['type'] == 'duplicate_bank'])
+        duplicate_xero_count = len([d for d in discrepancies if d['type'] == 'duplicate_xero'])
+        if duplicate_bank_count > 0 or duplicate_xero_count > 0:
+            st.info(f"Note: Found {duplicate_bank_count} potential duplicate bank transactions and {duplicate_xero_count} potential duplicate Xero transactions")
         
         # Display discrepancies in a table
         if discrepancies:
