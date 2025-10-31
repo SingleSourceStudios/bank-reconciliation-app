@@ -1,0 +1,23 @@
+BANK RECONCILIATION DISCREPANCY REPORT
+Generated: 2025-10-29 17:26:42
+
+SUMMARY
+=======
+Total Discrepancies: 2
+
+DISCREPANCY TYPES
+=================
+Unmatched Xero: 2
+
+FINANCIAL IMPACT
+================
+Unmatched Bank Entries: R0.00
+Unmatched Xero Entries: R3,500.00
+Net Difference: R3,500.00
+
+RECOMMENDATIONS
+===============
+1. Review unmatched bank entries to determine if they should be recorded in Xero
+2. Review unmatched Xero entries to determine if they have corresponding bank transactions
+3. Investigate duplicate entries and remove/merge as appropriate
+4. Ensure all transactions have proper references and descriptions

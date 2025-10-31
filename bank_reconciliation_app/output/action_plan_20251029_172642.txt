@@ -1,0 +1,28 @@
+BANK RECONCILIATION ACTION PLAN
+Generated: 2025-10-29 17:26:42
+
+IMMEDIATE ACTIONS
+=================
+
+UNMATCHED XERO ENTRIES (2 items)
+-----------------------------
+1. Date: 2025-06-12, Amount: R5,000.00, Description: Sales Revenue
+   Action: Transaction found in Xero but not in bank statement
+
+2. Date: 2025-06-18, Amount: R-1,500.00, Description: Office Supplies Purchase
+   Action: Transaction found in Xero but not in bank statement
+
+
+NEXT STEPS
+==========
+1. Assign responsibility for each discrepancy to team members
+2. Set deadlines for resolution of each discrepancy type
+3. Schedule follow-up review in 1 week
+4. Update Xero records with any missing transactions
+5. Verify bank statement accuracy with financial institution if needed
+
+DOCUMENTATION
+=============
+- Keep all correspondence related to discrepancy resolution
+- Note reasons for any adjustments made
+- Maintain audit trail of all changes

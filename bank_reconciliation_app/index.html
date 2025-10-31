@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamel Potteries Bank Reconciliation App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        .step-number {
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        .terminal {
+            background: #2d3748;
+            color: #e2e8f0;
+            border-radius: 5px;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #5a67d8;
+        }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🏦 Kamel Potteries Bank Reconciliation App</h1>
+        <p>Automated reconciliation of bank statements with Xero accounting data</p>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>📋 About This Application</h2>
+            <p>This application helps reconcile bank statements with Xero accounting data to identify discrepancies and ensure financial accuracy.</p>
+            <p>Key features include:</p>
+            <ul>
+                <li>Automated transaction matching</li>
+                <li>Discrepancy identification</li>
+                <li>Detailed reporting</li>
+                <li>Action plan generation</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>🚀 Quick Start</h2>
+            <div class="step">
+                <div class="step-number">1</div>
+                <div>
+                    <h3>Install Dependencies</h3>
+                    <p>Make sure you have Python installed, then install required packages:</p>
+                </div>
+            </div>
+            <div class="terminal">
+                pip install -r requirements.txt
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div>
+                    <h3>Run the Application</h3>
+                    <p>Start the web interface:</p>
+                </div>
+            </div>
+            <div class="terminal">
+                streamlit run app.py
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div>
+                    <h3>Access the App</h3>
+                    <p>Open your browser to:</p>
+                </div>
+            </div>
+            <div class="terminal">
+                http://localhost:8501
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📂 Required Files</h2>
+            <h3>Bank Statement Format</h3>
+            <p>CSV with semicolon separator:</p>
+            <div class="terminal">
+*Date;*Amount;Payee;Description<br>
+1/06/2025;-160.00;Headoffice;Monthly Fee
+            </div>
+
+            <h3>Xero Data Format</h3>
+            <p>CSV with comma separator:</p>
+            <div class="terminal">
+Date,Amount,Payee,Description<br>
+2025-06-01,-160.00,Headoffice,Monthly Fee
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>💻 Alternative: Command Line Interface</h2>
+        <p>You can also run the application from the command line:</p>
+        <div class="terminal">
+python cli.py --bank-file bank.csv --xero-file xero.csv --output-dir reports
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🔄 How It Works</h2>
+        <ol>
+            <li><strong>Upload Data</strong> - Load bank statement and Xero CSV files</li>
+            <li><strong>Process Data</strong> - Normalize dates and amounts</li>
+            <li><strong>Match Transactions</strong> - Find matching entries within tolerance</li>
+            <li><strong>Identify Discrepancies</strong> - Flag unmatched transactions</li>
+            <li><strong>Generate Reports</strong> - Create actionable reports</li>
+        </ol>
+    </div>
+
+    <footer>
+        <p>Kamel Potteries Bank Reconciliation App &copy; 2025</p>
+    </footer>
+</body>
+</html>
