@@ -159,16 +159,19 @@ def upload_data():
 def show_reconciliation_results():
     st.header("Reconciliation Results")
     
+    # Debug information
+    st.write(f"Bank uploaded: {st.session_state.get('bank_uploaded', False)}")
+    st.write(f"Xero uploaded: {st.session_state.get('xero_uploaded', False)}")
+    st.write(f"Discrepancies in session: {'discrepancies' in st.session_state}")
+    
     # Check if both files are uploaded
     if not (st.session_state.get('bank_uploaded', False) and st.session_state.get('xero_uploaded', False)):
         st.info("Please upload both bank statement and Xero data in the 'Upload Data' tab.")
         return
     
-    # Add a manual trigger button
-    if st.button("Perform Reconciliation"):
-        perform_reconciliation()
-    elif 'discrepancies' not in st.session_state:
-        # Auto-trigger if not already done
+    # Always show the manual trigger button
+    st.info("Click the button below to perform reconciliation")
+    if st.button("Perform Reconciliation", type="primary", use_container_width=True):
         perform_reconciliation()
     
     # Display results
